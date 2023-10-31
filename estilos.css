@@ -1,0 +1,89 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f4f4f4;
+}
+
+h1 {
+    color: #333;
+}
+
+#gameArea {
+    border: 2px solid #ccc;
+    padding: 20px;
+    background-color: #fff;
+}
+
+#questionArea, #graphicArea, #inputArea, #timerArea, #statusArea {
+    margin-bottom: 20px;
+}
+
+#timerArea {
+    font-size: 24px;
+    font-weight: bold;
+    color: red;
+}
+
+#statusArea {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Contenedor general */
+#gameContainer {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    border: 3px solid #ccc;
+    border-radius: 10px;
+  }
+  
+  /* Áreas de texto e información */
+  #questionArea, #statusArea, #scoreArea, #difficultyArea, #livesArea {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+  }
+  
+  /* Teclado numérico */
+  #numericKeypad button {
+    width: 80px;
+    height: 60px;
+    font-size: 24px;
+    margin: 5px;
+    cursor: pointer;
+  }
+  
+  /* Personalización de colores */
+  #livesArea {
+    color: red;
+  }
+  #scoreArea {
+    color: green;
+  }
+  
+  /* Contenedor para las métricas del juego */
+div#metricsContainer {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  input#userInput {
+    width: 50px;  /* Ancho del cuadro */
+    height: 40px;  /* Altura del cuadro */
+    font-size: 24px;  /* Tamaño de la fuente */
+  }
+
+  #questionAndInput {
+    display: flex;
+    align-items: center;  /* Alinear verticalmente en el centro */
+  }
+
+  #questionArea {
+    margin-right: 20px;  /* Añadir 20px de margen a la derecha */
+  }
+
+  input#userInput {
+    margin-left: 20px;  /* Añadir 20px de margen a la izquierda */
+  }
+  
+  

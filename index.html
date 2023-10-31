@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Math Game</title>
+    <link rel="stylesheet" type="text/css" href="estilos.css">
+</head>
+<body>
+    <h1>Bienvenido al juego de las sumas!</h1>
+    
+    <div id="gameArea">
+        <div id="metricsContainer">
+           <div id="livesArea">Vidas: 3</div>
+           <div id="scoreArea">Puntuación: 0</div>
+           <div id="difficultyArea">Nivel: Fácil</div>
+        </div>
+
+        <div id="questionAndInput">
+            <div id="questionArea">¿Cuánto es 2 + 2? </div>
+            <input type="text" id="userInput" readonly>
+        </div>
+        <div id="graphicArea">
+            <!-- Graphic representation will be displayed here -->
+        </div>
+        <div id="inputArea">
+            <div id="numericKeypad">
+              <button onclick="appendToInput('1')">1</button>
+              <button onclick="appendToInput('2')">2</button>
+              <button onclick="appendToInput('3')">3</button>
+              <button onclick="appendToInput('4')">4</button>
+              <button onclick="appendToInput('5')">5</button>
+              <br />
+              <button onclick="appendToInput('6')">6</button>
+              <button onclick="appendToInput('7')">7</button>
+              <button onclick="appendToInput('8')">8</button>
+              <button onclick="appendToInput('9')">9</button>
+              <button onclick="appendToInput('0')">0</button>
+              <br />
+              <button onclick="deleteLastInput()">Borrar</button>
+              <button onclick="submitInput()">=</button>
+            </div>
+        </div>
+        <div id="timerArea">
+            <!-- Timer will be displayed here -->
+        </div>
+        <div id="statusArea">
+            <!-- Game status, like score, will be displayed here -->
+        </div>
+    </div>
+
+<script src="tricks.js"></script>
+
+</body>
+</html>
