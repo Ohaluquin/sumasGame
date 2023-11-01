@@ -44,7 +44,6 @@ function handleInput(input) {
     // Aumentar la puntuación
     score++;
     //correctSound.play();
-    playSound(500, 0.5);
     updateMetrics();
 
     // Opcionalmente, aumentar la dificultad (por ejemplo, aumentar maxNumber)
@@ -61,7 +60,6 @@ function handleInput(input) {
     // Restar una vida si la respuesta es incorrecta
     lives--;
     //incorrectSound.play();
-    playSound(100, 0.5);
     updateMetrics();
 
     // Comprobar si quedan vidas
@@ -105,7 +103,6 @@ function updateTimer() {
   // Disminuir el tiempo restante
   remainingTime--;
   //timerSound.play();
-  playSound(200, 0.2);
 }
 
 function startGame() {
@@ -203,15 +200,4 @@ function deleteLastInput() {
   // Actualizar el campo de entrada en el HTML
   const userInput = document.getElementById('userInput');
   userInput.value = currentInput;
-}
-
-function playSound(frequency, duration) {
-  const audioContext = new (window.AudioContext || window.webkitAudioContext)();
-  const oscillator = audioContext.createOscillator();
-
-  oscillator.type = 'sine';  // Tipo de onda
-  oscillator.frequency.setValueAtTime(frequency, audioContext.currentTime); // Frecuencia en Hz
-  oscillator.connect(audioContext.destination);
-  oscillator.start();
-  oscillator.stop(audioContext.currentTime + duration);
 }
