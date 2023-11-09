@@ -51,8 +51,8 @@ function handleInput(input) {
     // Opcionalmente, aumentar la dificultad
     if (score % 3 === 0) { // cada 3 respuestas correctas
       maxNumber += 5;
+      minNumber += 3;
       if (score % 6 === 0) { // cada 10 respuestas correctas
-        minNumber += 5;
         timerDuration--;
       }
     }
@@ -138,9 +138,9 @@ function endGame() {
   statusArea.innerHTML = `Juego terminado. Tu puntuación final es: ${score}`;
 
   // Opcionales: Mostrar mensajes según el desempeño, botón de reinicio, etc.
-  if (score < 10) {
+  if (score < 15) {
     statusArea.innerHTML += '<br>¡Sigue practicando!';
-  } else if (score < 15) {
+  } else if (score < 25) {
     statusArea.innerHTML += '<br>¡Casi lo logras, inténtalo de nuevo!';
   } else {
     statusArea.innerHTML += '<br>¡Buen trabajo!';
@@ -182,16 +182,16 @@ function updateMetrics() {
 
   const difficultyArea = document.getElementById('difficultyArea');
   let levelImage = document.getElementById('levelImage');
-  if (maxNumber <= 10) {
+  if (score <= 10) {
     difficultyArea.textContent = "Nivel: Principiante";
     levelImage.src = 'principiante.png';
-  } else if (maxNumber <= 25) {
+  } else if (score <= 20) {
     difficultyArea.textContent = "Nivel: Fácil";
     levelImage.src = 'facil.png';
-  } else if (maxNumber <= 40) {
+  } else if (score <= 30) {
     difficultyArea.textContent = "Nivel: Intermedio";
     levelImage.src = 'intermedio.png';
-  } else if (maxNumber <= 60) {
+  } else if (score <= 40) {
     difficultyArea.textContent = "Nivel: Difícil";
     levelImage.src = 'dificil.png';
   } else {

@@ -93,7 +93,7 @@ input#userInput {
 button {
   background-color: #FFD700; /* Un amarillo dorado */
   color: #000000; /* Texto en negro para contraste */
-  border: none;
+  border:none;
   padding: 10px 20px;
   text-align: center;
   text-decoration: none;
@@ -120,7 +120,7 @@ button:hover {
 }
 
 #numericKeypad {
-  width: 60%;
+  width: 80%;
 }
 
 #imageContainer { 
