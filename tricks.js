@@ -13,7 +13,11 @@ window.onload = function() {
   startGame();
 };
 
-let maxNumber = 9; // Variable global para controlar el número máximo en las preguntas
+let maxNumber = 5; // Variable global para controlar el número máximo en las preguntas
+let minNumber = 1; // Variable global para controlar el número mínimo en las preguntas
+let timerDuration = 15; // Duración del temporizador en segundos
+let remainingTime = timerDuration; // Tiempo restante
+let lives = 3; // Número inicial de vidas
 let num1=0;
 let num2=0;
 
@@ -21,13 +25,13 @@ function generateQuestion() {
   let lastNum1 = num1;
   let lastNum2 = num2;
   // Generar dos números aleatorios entre 1 y maxNumber
-  num1 = Math.floor(Math.random() * maxNumber) + maxNumber-8;
+  num1 = Math.floor(Math.random() * maxNumber) + minNumber;
   while (num1 === lastNum1) {
-    num1 = Math.floor(Math.random() * maxNumber) + maxNumber-8;
+    num1 = Math.floor(Math.random() * maxNumber) + minNumber;
   }
-  num2 = Math.floor(Math.random() * maxNumber) + maxNumber-8;
+  num2 = Math.floor(Math.random() * maxNumber) + minNumber;
   while (num2 === lastNum2) {
-    num2 = Math.floor(Math.random() * maxNumber) + maxNumber-8;
+    num2 = Math.floor(Math.random() * maxNumber) + minNumber;
   }
   // Actualizar el área de la pregunta con la nueva pregunta
   const questionArea = document.getElementById('questionArea');
@@ -41,18 +45,19 @@ function generateQuestion() {
 function handleInput(input) {
   // Comprobar si la respuesta del usuario es correcta
   if (input === currentQuestion) {
-    // Aumentar la puntuación
-    score++;
+    score++; // Aumentar la puntuación
     //correctSound.play();
+
+    // Opcionalmente, aumentar la dificultad
+    if (score % 3 === 0) { // cada 3 respuestas correctas
+      maxNumber += 5;
+      if (score % 6 === 0) { // cada 10 respuestas correctas
+        minNumber += 5;
+        timerDuration--;
+      }
+    }
     updateMetrics();
 
-    // Opcionalmente, aumentar la dificultad (por ejemplo, aumentar maxNumber)
-    if (score % 5 === 0) { // cada 5 respuestas correctas
-      maxNumber += 10;
-      timerDuration--;
-      updateMetrics();
-    }
-    
     // Generar una nueva pregunta y reiniciar el temporizador
     generateQuestion();
     remainingTime = timerDuration;
@@ -73,11 +78,6 @@ function handleInput(input) {
     }
   }
 }
-
-
-let timerDuration = 10; // Duración del temporizador en segundos
-let remainingTime = timerDuration; // Tiempo restante
-let lives = 3; // Número inicial de vidas
 
 function updateTimer() {
   // Actualizar el área del temporizador
@@ -109,8 +109,9 @@ function startGame() {
   // Reiniciar todas las variables del juego
   score = 0;
   lives = 3;
-  maxNumber = 9;
-  timerDuration = 10;
+  maxNumber = 5;
+  minNumber = 1;
+  timerDuration = 12;
   remainingTime = timerDuration;
 
   // Limpiar los mensajes y el área de estado
@@ -180,18 +181,27 @@ function updateMetrics() {
   scoreArea.textContent = `Puntuación: ${score}`;
 
   const difficultyArea = document.getElementById('difficultyArea');
-  if (maxNumber <= 20) {
+  let levelImage = document.getElementById('levelImage');
+  if (maxNumber <= 10) {
+    difficultyArea.textContent = "Nivel: Principiante";
+    levelImage.src = 'principiante.png';
+  } else if (maxNumber <= 25) {
     difficultyArea.textContent = "Nivel: Fácil";
+    levelImage.src = 'facil.png';
   } else if (maxNumber <= 40) {
     difficultyArea.textContent = "Nivel: Intermedio";
-  } else {
+    levelImage.src = 'intermedio.png';
+  } else if (maxNumber <= 60) {
     difficultyArea.textContent = "Nivel: Difícil";
+    levelImage.src = 'dificil.png';
+  } else {
+    difficultyArea.textContent = "Experto";
+    levelImage.src = 'experto.png';
   }
 
   const livesArea = document.getElementById('livesArea');
   livesArea.textContent = `Vidas: ${lives}`;
 }
-
 
 function deleteLastInput() {
   // Eliminar el último carácter de la entrada actual

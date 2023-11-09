@@ -1,89 +1,137 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 20px;
-    background-color: #f4f4f4;
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  background-color: #f4f4f4;
+  background-image: url("pizarra.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
 }
 
 h1 {
-    color: #333;
+  color: #f37272;
 }
 
 #gameArea {
-    border: 2px solid #ccc;
-    padding: 20px;
-    background-color: #fff;
+  border: 2px solid #ccc;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.9); /* blanco con un poco de transparencia */
+  border-radius: 10px;
 }
 
-#questionArea, #graphicArea, #inputArea, #timerArea, #statusArea {
-    margin-bottom: 20px;
+/* Contenedor para las métricas del juego */
+div#metricsContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+#questionArea,
+#timerArea,
+#statusArea {
+  margin-bottom: 20px;
 }
 
 #timerArea {
-    font-size: 24px;
-    font-weight: bold;
-    color: red;
+  font-size: 24px;
+  font-weight: bold;
+  color: red;
 }
 
 #statusArea {
-    font-size: 18px;
-    font-weight: bold;
+  font-size: 18px;
+  font-weight: bold;
 }
 
-/* Contenedor general */
+/* Áreas de texto e información */
+#questionArea,
+#statusArea,
+#scoreArea,
+#difficultyArea,
+#livesArea {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
+
+/* Teclado numérico */
+#numericKeypad button {
+  width: 80px;
+  height: 60px;
+  font-size: 24px;
+  margin: 5px;
+  cursor: pointer;
+}
+
+/* Personalización de colores */
+#livesArea {
+  color: red;
+}
+#scoreArea {
+  color: green;
+}
+
+input#userInput {
+  width: 50px; /* Ancho del cuadro */
+  height: 40px; /* Altura del cuadro */
+  font-size: 24px; /* Tamaño de la fuente */
+  background-color: #FFD700;
+}
+
+#questionAndInput {
+  display: flex;
+  align-items: center; /* Alinear verticalmente en el centro */
+}
+
+#questionArea {
+  margin-right: 20px; /* Añadir 20px de margen a la derecha */
+}
+
+input#userInput {
+  margin-left: 20px; /* Añadir 20px de margen a la izquierda */
+}
+
+button {
+  background-color: #FFD700; /* Un amarillo dorado */
+  color: #000000; /* Texto en negro para contraste */
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 8px; /* Bordes redondeados para un look suavizado */
+  box-shadow: 2px 2px 4px #000000; /* Una sombra sutil para dar profundidad */
+}
+
+button:hover {
+  background-color: #FFEA00; /* Un amarillo más claro para el hover */
+}
+
+#deleteButton {
+  font-size: 2em !important; /* Ajusta esto según el tamaño que prefieras */
+}
+
 #gameContainer {
-    max-width: 600px;
-    margin: auto;
-    padding: 20px;
-    border: 3px solid #ccc;
-    border-radius: 10px;
-  }
-  
-  /* Áreas de texto e información */
-  #questionArea, #statusArea, #scoreArea, #difficultyArea, #livesArea {
-    font-size: 1.2em;
-    margin-bottom: 20px;
-  }
-  
-  /* Teclado numérico */
-  #numericKeypad button {
-    width: 80px;
-    height: 60px;
-    font-size: 24px;
-    margin: 5px;
-    cursor: pointer;
-  }
-  
-  /* Personalización de colores */
-  #livesArea {
-    color: red;
-  }
-  #scoreArea {
-    color: green;
-  }
-  
-  /* Contenedor para las métricas del juego */
-div#metricsContainer {
-    display: flex;
-    justify-content: space-between;
-  }
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-  input#userInput {
-    width: 50px;  /* Ancho del cuadro */
-    height: 40px;  /* Altura del cuadro */
-    font-size: 24px;  /* Tamaño de la fuente */
-  }
+#numericKeypad {
+  width: 60%;
+}
 
-  #questionAndInput {
-    display: flex;
-    align-items: center;  /* Alinear verticalmente en el centro */
-  }
+#imageContainer { 
+  flex-grow: 1; /* Permite que el contenedor de la imagen ocupe el espacio restante */
+  display: flex; /* Si quieres que la imagen dentro se alinee correctamente */
+  justify-content: center; /* Centrar la imagen horizontalmente en el contenedor */
+  align-items: center; /* Centrar la imagen verticalmente en el contenedor */
+  padding-left: 20px; /* Agrega espacio si es necesario */
+}
 
-  #questionArea {
-    margin-right: 20px;  /* Añadir 20px de margen a la derecha */
-  }
-
-  input#userInput {
-    margin-left: 20px;  /* Añadir 20px de margen a la izquierda */
-  }
-  
-  
+#levelImage {
+  width: 30%; /* Ajusta esto para que se adapte al tamaño de tu gráfico-section */
+  height: auto; /* Esto mantendrá la relación de aspecto de la imagen */
+}
