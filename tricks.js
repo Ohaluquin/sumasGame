@@ -10,14 +10,15 @@ let score = 0;
 let currentQuestion;
 
 window.onload = function() {
-  startGame();
+  score = -1; // -1 para que ponga un mensaje inicial
+  endGame(); 
 };
 
-let maxNumber = 5; // Variable global para controlar el número máximo en las preguntas
-let minNumber = 1; // Variable global para controlar el número mínimo en las preguntas
-let timerDuration = 15; // Duración del temporizador en segundos
+let maxNumber; // Variable global para controlar el número máximo en las preguntas
+let minNumber; // Variable global para controlar el número mínimo en las preguntas
+let timerDuration; // Duración del temporizador en segundos
 let remainingTime = timerDuration; // Tiempo restante
-let lives = 3; // Número inicial de vidas
+let lives; // Número inicial de vidas
 let num1=0;
 let num2=0;
 
@@ -135,10 +136,12 @@ function endGame() {
 
   // Mostrar el puntaje final
   const statusArea = document.getElementById('statusArea');
-  statusArea.innerHTML = `Juego terminado. Tu puntuación final es: ${score}`;
+  if(score>=0) statusArea.innerHTML = `Juego terminado. Tu puntuación final es: ${score}`;
 
   // Opcionales: Mostrar mensajes según el desempeño, botón de reinicio, etc.
-  if (score < 15) {
+  if (score <0) {
+    statusArea.innerHTML += '<br>¡Presiona el botón para iniciar!';
+  } else if(score < 15) {
     statusArea.innerHTML += '<br>¡Sigue practicando!';
   } else if (score < 25) {
     statusArea.innerHTML += '<br>¡Casi lo logras, inténtalo de nuevo!';
@@ -147,7 +150,15 @@ function endGame() {
   }
 
   // Botón de reinicio
-  statusArea.innerHTML += '<br><button onclick="startGame()">Jugar de nuevo</button>';
+  if(score>=0) {
+    statusArea.innerHTML += '<br><button onclick="startGame()">Jugar de nuevo</button>';
+    // Mostrar el mensaje de fin de juego
+    var randomTipIndex = Math.floor(Math.random() * tipsForImprovement.length);
+    var tipToShow = tipsForImprovement[randomTipIndex];
+    // Actualizar el contenedor del mensaje de fin de juego y mostrarlo
+    statusArea.innerHTML += "<p>Consejo para mejorar: " + tipToShow + "</p>";
+    }
+  else statusArea.innerHTML += '<br><button onclick="startGame()">Jugar</button>';
 }
 
 
@@ -211,3 +222,16 @@ function deleteLastInput() {
   const userInput = document.getElementById('userInput');
   userInput.value = currentInput;
 }
+
+// Lista de consejos para mejorar en sumas
+const tipsForImprovement = [
+  "Recuerda que sumar de cinco en cinco puede simplificar cómo haces tus cálculos.",
+  "Redondea y ajusta: Intenta redondear el número más grande al múltiplo de diez más cercano y ajusta después.",
+  "Complementos: Identifica los complementos de cinco y diez, son muy útiles para unir los números como si fueran rompecabezas.",
+  "Duplicar: Practica duplicar cualquier número, te puede facilitar los calculos.",
+  "Conmutativa: Si eliges primero el número mayor y luego añades el menor, es más rápido el cálculo.",
+  "Usa casi dobles: Por ejemplo, si sabes que el doble de 8 es 16, calcula 8+9 pensando que es uno más.",
+  "Suma en etapas: Por ejemplo, para sumar 58+27, primero suma 50+20=70, y luego 8+7=15, finalmente 70+15=85.",
+  "Descomponer: Separa los números para formar bloques que puedan sumarse fácilmente. Por ejemplo, 9+7=9+1+6=16"
+];
+

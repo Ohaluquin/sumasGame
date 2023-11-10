@@ -10,7 +10,7 @@ body {
 }
 
 h1 {
-  color: #f37272;
+  color: #f83a3a;
 }
 
 #gameArea {
@@ -80,6 +80,7 @@ input#userInput {
 #questionAndInput {
   display: flex;
   align-items: center; /* Alinear verticalmente en el centro */
+  justify-content: space-between;
 }
 
 #questionArea {
@@ -120,7 +121,7 @@ button:hover {
 }
 
 #numericKeypad {
-  width: 80%;
+  width: 60%;
 }
 
 #imageContainer { 
@@ -132,6 +133,6 @@ button:hover {
 }
 
 #levelImage {
-  width: 30%; /* Ajusta esto para que se adapte al tamaño de tu gráfico-section */
+  width: 60%; /* Ajusta esto para que se adapte al tamaño de tu gráfico-section */
   height: auto; /* Esto mantendrá la relación de aspecto de la imagen */
 }

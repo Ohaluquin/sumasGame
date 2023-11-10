@@ -2,14 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Math Game</title>
+    <title>El juego de las sumas</title>
     <link rel="stylesheet" type="text/css" href="estilos.css">
 </head>
 <body>
-    <h1>Bienvenido al juego de las sumas!</h1>
-    
     <div id="gameArea">
         <div id="metricsContainer">
+           <h1>El juego de las sumas!</h1>
            <div id="livesArea">Vidas: 3</div>
            <div id="scoreArea">Puntuación: 0</div>
            <div id="difficultyArea">Nivel: Fácil</div>
@@ -18,6 +17,8 @@
         <div id="questionAndInput">
             <div id="questionArea">¿Cuánto es 2 + 2? </div>
             <input type="text" id="userInput" readonly>
+            <div id="timerArea"> </div>
+            <div id="statusArea"> </div>
         </div>
 
         <div id="gameContainer">
@@ -40,12 +41,6 @@
             <div id="imageContainer">
               <img id="levelImage" src="principiante.png" alt="Gráfico del nivel" />
             </div>
-        </div>
-        <div id="timerArea">
-            <!-- Timer will be displayed here -->
-        </div>
-        <div id="statusArea">
-            <!-- Game status, like score, will be displayed here -->
         </div>
     </div>
 
