@@ -61,13 +61,16 @@ div#metricsContainer {
   margin: 5px;
   cursor: pointer;
 }
-
 /* Personalización de colores */
 #livesArea {
   color: red;
 }
 #scoreArea {
   color: green;
+}
+
+#statusArea {
+  width: 400px;
 }
 
 input#userInput {
@@ -84,11 +87,11 @@ input#userInput {
 }
 
 #questionArea {
-  margin-right: 20px; /* Añadir 20px de margen a la derecha */
+  margin-right: 2px; /* Añadir 20px de margen a la derecha */
 }
 
 input#userInput {
-  margin-left: 20px; /* Añadir 20px de margen a la izquierda */
+  margin-left: 2px; /* Añadir 20px de margen a la izquierda */
 }
 
 button {
