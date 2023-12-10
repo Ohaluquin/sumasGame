@@ -1,7 +1,7 @@
 // JavaScript for Math Game
-//const timerSound = new Audio('timer-sound.mp3');
-//const correctSound = new Audio('correct-sound.mp3');
-//const incorrectSound = new Audio('incorrect-sound.mp3');
+const timerSound = new Audio('tick.mp3');
+//const correctSound = new Audio('correct_sound.mp3');
+const incorrectSound = new Audio('error_sound.mp3');
 
 // Initialize game variables
 let timer;
@@ -55,7 +55,7 @@ function handleInput(input) {
     remainingTime = timerDuration;
   } else {
     lives--; // Restar una vida si la respuesta es incorrecta
-    //incorrectSound.play();
+    incorrectSound.play();
     updateMetrics();
     if (lives <= 0) { // Comprobar si quedan vidas
       endGame(); // Terminar el juego si no quedan vidas
@@ -80,7 +80,7 @@ function updateTimer() {
     }
   }
   remainingTime--; // Disminuir el tiempo restante
-  //timerSound.play();
+  timerSound.play();
 }
 
 function startGame() {
