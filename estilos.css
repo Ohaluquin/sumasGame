@@ -15,7 +15,7 @@ h1 {
 
 #gameArea {
   border: 2px solid #ccc;
-  padding: 20px;
+  padding: 10px;
   background-color: rgba(255, 255, 255, 0.9); /* blanco con un poco de transparencia */
   border-radius: 10px;
 }
@@ -24,6 +24,8 @@ h1 {
 div#metricsContainer {
   display: flex;
   justify-content: space-between;
+  align-items:first baseline;
+  padding: 0px;
 }
 
 #questionArea,
@@ -41,6 +43,7 @@ div#metricsContainer {
 #statusArea {
   font-size: 18px;
   font-weight: bold;
+  width: 50%;
 }
 
 /* Áreas de texto e información */
@@ -51,6 +54,17 @@ div#metricsContainer {
 #livesArea {
   font-size: 1.2em;
   margin-bottom: 20px;
+}
+
+#questionAndInput {
+  display: flex;
+  align-items: center; /* Alinear verticalmente en el centro */
+  justify-content: space-between;
+}
+
+#questionArea, #timeArea {
+  margin-right: 40px; /* Añadir 20px de margen a la derecha */
+  padding-top: 20px;
 }
 
 /* Teclado numérico */
@@ -69,28 +83,11 @@ div#metricsContainer {
   color: green;
 }
 
-#statusArea {
-  width: 400px;
-}
-
 input#userInput {
   width: 50px; /* Ancho del cuadro */
   height: 40px; /* Altura del cuadro */
   font-size: 24px; /* Tamaño de la fuente */
   background-color: #FFD700;
-}
-
-#questionAndInput {
-  display: flex;
-  align-items: center; /* Alinear verticalmente en el centro */
-  justify-content: space-between;
-}
-
-#questionArea {
-  margin-right: 2px; /* Añadir 20px de margen a la derecha */
-}
-
-input#userInput {
   margin-left: 2px; /* Añadir 20px de margen a la izquierda */
 }
 
@@ -120,7 +117,6 @@ button:hover {
 #gameContainer {
   display: flex;
   justify-content: space-between;
-  align-items: center;
 }
 
 #numericKeypad {
@@ -132,10 +128,9 @@ button:hover {
   display: flex; /* Si quieres que la imagen dentro se alinee correctamente */
   justify-content: center; /* Centrar la imagen horizontalmente en el contenedor */
   align-items: center; /* Centrar la imagen verticalmente en el contenedor */
-  padding-left: 20px; /* Agrega espacio si es necesario */
 }
 
 #levelImage {
-  width: 60%; /* Ajusta esto para que se adapte al tamaño de tu gráfico-section */
+  width: 40%; /* Ajusta esto para que se adapte al tamaño de tu gráfico-section */
   height: auto; /* Esto mantendrá la relación de aspecto de la imagen */
 }
