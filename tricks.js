@@ -71,6 +71,7 @@ function updateTimer() {
   timerArea.textContent = `Tiempo restante: ${remainingTime}s`; // Actualizar el área del temporizador
   if (remainingTime <= 0) { // Verificar si el tiempo se ha agotado
     lives--; // Restar una vida
+    incorrectSound.play();
     updateMetrics();    
     if (lives <= 0) { // Comprobar si quedan vidas
       endGame(); // Terminar el juego si no quedan vidas
