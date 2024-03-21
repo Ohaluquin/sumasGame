@@ -120,10 +120,11 @@ button:hover {
 }
 
 #numericKeypad {
-  width: 60%;
+  width: 80%;
 }
 
 #imageContainer { 
+  width: 20%;
   flex-grow: 1; /* Permite que el contenedor de la imagen ocupe el espacio restante */
   display: flex; /* Si quieres que la imagen dentro se alinee correctamente */
   justify-content: center; /* Centrar la imagen horizontalmente en el contenedor */
@@ -131,6 +132,6 @@ button:hover {
 }
 
 #levelImage {
-  width: 40%; /* Ajusta esto para que se adapte al tamaño de tu gráfico-section */
+  width: 80%; /* Ajusta esto para que se adapte al tamaño de tu gráfico-section */
   height: auto; /* Esto mantendrá la relación de aspecto de la imagen */
 }
