@@ -20,6 +20,7 @@ let remainingTime = timerDuration; // Tiempo restante
 let lives; // Número inicial de vidas
 let num1=0;
 let num2=0;
+let roundNumber = false;
 
 function generateQuestion() {
   let lastNum1 = num1;
@@ -33,9 +34,10 @@ function generateQuestion() {
   while (num2 === lastNum2) {
     num2 = Math.floor(Math.random() * maxNumber) + minNumber;
   }
+  if(roundNumber) num2 = num2*5;
   // Actualizar el área de la pregunta con la nueva pregunta
   const questionArea = document.getElementById('questionArea');
-  questionArea.textContent = `¿Cuánto es ${num1} + ${num2}? `;
+  questionArea.textContent = `${num1} + ${num2}`;
   currentQuestion = num1 + num2; // Guardar la respuesta correcta en una variable
 }
 
@@ -43,12 +45,16 @@ function handleInput(input) {
   if (input === currentQuestion) { // Comprobar si la respuesta del usuario es correcta
     score++; // Aumentar la puntuación
     //correctSound.play();
-    if (score % 3 === 0) { // cada 3 respuestas correctas aumentar la dificultad
+    if(score==6) {//En el nivel tres practicar agregando decenas
+      roundNumber = true;             
+      }
+    else if (score%3 === 0) { // cada 3 respuestas correctas aumentar la dificultad
+      roundNumber = false;
       maxNumber += 5;
       minNumber += 3;
-      if (score % 6 === 0) { // cada 10 respuestas correctas
+      if (score%6 === 0) { // cada 6 respuestas correctas se reduce el tiempo
         timerDuration--;
-      }
+      }      
     }
     updateMetrics();
     generateQuestion(); // Generar una nueva pregunta y reiniciar el temporizador
@@ -68,7 +74,7 @@ function handleInput(input) {
 
 function updateTimer() {  
   const timerArea = document.getElementById('timerArea');
-  timerArea.textContent = `Tiempo restante: ${remainingTime}s`; // Actualizar el área del temporizador
+  timerArea.textContent = `Tiempo: ${remainingTime}s`; // Actualizar el área del temporizador
   if (remainingTime <= 0) { // Verificar si el tiempo se ha agotado
     lives--; // Restar una vida
     incorrectSound.play();
@@ -103,8 +109,6 @@ function startGame() {
   generateQuestion();
 }
 
-
-
 function endGame() {
   clearInterval(timer); // Detener el temporizador
   const statusArea = document.getElementById('statusArea');  // Mostrar el puntaje final
@@ -128,7 +132,6 @@ function endGame() {
     }
   else statusArea.innerHTML += '<br><button onclick="startGame()">Jugar</button>';
 }
-
 
 let currentInput = ""; // Variable global para almacenar la entrada del usuario
 

@@ -29,31 +29,27 @@ div#metricsContainer {
 }
 
 #questionArea,
+#statusArea,
+#scoreArea,
 #timerArea,
-#statusArea {
+#difficultyArea,
+#livesArea {
+  font-size: 1.2em;
   margin-bottom: 20px;
 }
 
 #timerArea {
-  font-size: 24px;
   font-weight: bold;
   color: red;
 }
 
 #statusArea {
-  font-size: 18px;
   font-weight: bold;
   width: 50%;
 }
 
-/* Áreas de texto e información */
-#questionArea,
-#statusArea,
-#scoreArea,
-#difficultyArea,
-#livesArea {
-  font-size: 1.2em;
-  margin-bottom: 20px;
+#question {
+  width: 30%;
 }
 
 #questionAndInput {
@@ -63,7 +59,7 @@ div#metricsContainer {
 }
 
 #questionArea, #timeArea {
-  margin-right: 40px; /* Añadir 20px de margen a la derecha */
+  margin-right: 1rem; /* Añadir 20px de margen a la derecha */
   padding-top: 20px;
 }
 
