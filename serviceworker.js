@@ -1,6 +1,5 @@
 const cacheName = 'sumasGame-cache-v1';
 const assets = [
-  '/',
   'index.html',
   'estilo.css',
   'triks.js',
