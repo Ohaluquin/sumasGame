@@ -1,0 +1,17 @@
+{
+    "short_name": "sumasGame",
+    "name": "El juego de las sumas",
+    "icons": [
+      {
+        "src": "sumasGame.ico",
+        "type": "image/ico",
+        "sizes": "192x192"
+      }
+    ],
+    "start_url": "index.html",
+    "background_color": "#000000",
+    "display": "standalone",
+    "scope": "/",
+    "theme_color": "#000000"
+  }
+  

@@ -37,7 +37,7 @@ function generateQuestion() {
   if(roundNumber) num2 = num2*5;
   // Actualizar el área de la pregunta con la nueva pregunta
   const questionArea = document.getElementById('questionArea');
-  questionArea.textContent = `${num1} + ${num2}`;
+  questionArea.textContent = `${num1} + ${num2} = `;
   currentQuestion = num1 + num2; // Guardar la respuesta correcta en una variable
 }
 
@@ -100,7 +100,7 @@ function startGame() {
   remainingTime = timerDuration;
   // Limpiar los mensajes y el área de estado
   const statusArea = document.getElementById('statusArea');
-  statusArea.innerHTML = "";
+  statusArea.innerHTML = "";  
   const userInput = document.getElementById('userInput');
   userInput.value = "";
   // Iniciar el temporizador
@@ -110,7 +110,7 @@ function startGame() {
 }
 
 function endGame() {
-  clearInterval(timer); // Detener el temporizador
+  clearInterval(timer); // Detener el temporizador  
   const statusArea = document.getElementById('statusArea');  // Mostrar el puntaje final
   if(score>=0) statusArea.innerHTML = `Juego terminado. Tu puntuación final es: ${score}`;
   if (score <0) { // Opcionales: Mostrar mensajes según el desempeño, botón de reinicio, etc.
@@ -123,6 +123,7 @@ function endGame() {
     statusArea.innerHTML += '<br>¡Buen trabajo!';
   }
   if(score>=0) {  // Botón de reinicio
+    statusArea.style.display = 'block';
     statusArea.innerHTML += '<br><button onclick="startGame()">Jugar de nuevo</button>';
     // Mostrar el mensaje de fin de juego
     var randomTipIndex = Math.floor(Math.random() * tipsForImprovement.length);
@@ -195,3 +196,12 @@ const tipsForImprovement = [
   "Descomponer: Separa los números para formar bloques que puedan sumarse fácilmente. Por ejemplo, 9+7=9+1+6=16"
 ];
 
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/service-worker.js').then(registration => {
+      console.log('ServiceWorker registration successful with scope: ', registration.scope);
+    }, err => {
+      console.log('ServiceWorker registration failed: ', err);
+    });
+  });
+}

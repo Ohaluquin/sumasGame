@@ -1,51 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta name="viewport" charset="UTF-8" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="viewport" charset="UTF-8"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title>El juego de las sumas</title>
     <link rel="stylesheet" type="text/css" href="estilos.css">
+    <link rel="manifest" href="/manifest.json">
 </head>
+
 <body>
     <div id="gameArea">
         <div id="metricsContainer">
-           <div id="titulo"><h1>El juego de las sumas!</h1></div>
-           <div id="livesArea">Vidas: 3</div>
-           <div id="scoreArea">Puntuación: 0</div>
-           <div id="difficultyArea">Nivel: Fácil</div>
+            <div id="titulo"><h3>El juego de las sumas!</h3></div>
+            <div id="livesArea">Vidas: 3</div>
+            <div id="scoreArea">Puntuación: 0</div>
+            <div id="difficultyArea">Nivel: Fácil</div>
         </div>
 
         <div id="gameContainer">
             <div id="numericKeypad">
-              <button onclick="appendToInput('1')">1</button>
-              <button onclick="appendToInput('2')">2</button>
-              <button onclick="appendToInput('3')">3</button>
-              <button onclick="appendToInput('4')">4</button>
-              <button onclick="appendToInput('5')">5</button>
-              <br />
-              <button onclick="appendToInput('6')">6</button>
-              <button onclick="appendToInput('7')">7</button>
-              <button onclick="appendToInput('8')">8</button>
-              <button onclick="appendToInput('9')">9</button>
-              <button onclick="appendToInput('0')">0</button>
-              <br />
-              <button id="deleteButton" onclick="deleteLastInput()">&larr;</button>
-              <button onclick="submitInput()">=</button>
+                <button onclick="appendToInput('1')">1</button>
+                <button onclick="appendToInput('2')">2</button>
+                <button onclick="appendToInput('3')">3</button>
+                <button onclick="appendToInput('4')">4</button>
+                <button onclick="appendToInput('5')">5</button>
+                <br />
+                <button onclick="appendToInput('6')">6</button>
+                <button onclick="appendToInput('7')">7</button>
+                <button onclick="appendToInput('8')">8</button>
+                <button onclick="appendToInput('9')">9</button>
+                <button onclick="appendToInput('0')">0</button>
+                <br />
+                <button id="deleteButton" onclick="deleteLastInput()">&larr;</button>
+                <button onclick="submitInput()">=</button>
             </div>
             <div id="imageContainer">
-              <img id="levelImage" src="principiante.png" alt="Gráfico del nivel" />
+                <img id="levelImage" src="principiante.png" alt="Gráfico del nivel" />
             </div>
         </div>
 
         <div id="questionAndInput">
             <div id="question">
-                <div id="questionArea">2 + 2</div>
+                <div id="questionArea">2 + 2 = </div>
                 <input type="text" id="userInput" readonly>
             </div>
             <div id="timerArea"> </div>
             <div id="statusArea"> </div>
         </div>
-
+        <div id="downloadArea">
+            <a href="https://ohaluquin.github.io/sumasGame/sumasGame.zip" download="sumasGame.zip">
+                <button>Descargar Juego</button>
+            </a>
+            <h3>Descarga el juego y descomprime el archivo para jugarlo localmente sin necesidad de conexión a internet.</h3>
+        </div>
     </div>
-<script src="tricks.js"></script>
+    <script src="tricks.js"></script>
 </body>
+
 </html>

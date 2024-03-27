@@ -1,6 +1,6 @@
 body {
   font-family: Arial, sans-serif;
-  margin: 20px;
+  margin: 5px;
   background-color: #f4f4f4;
   background-image: url("pizarra.png");
   background-repeat: no-repeat;
@@ -9,15 +9,16 @@ body {
   background-position: center;
 }
 
-h1 {
+h3 {
   color: #f83a3a;
 }
 
 #gameArea {
   border: 2px solid #ccc;
-  padding: 10px;
+  padding: 5px;
   background-color: rgba(255, 255, 255, 0.9); /* blanco con un poco de transparencia */
   border-radius: 10px;
+  max-height: fit-content;
 }
 
 /* Contenedor para las métricas del juego */
@@ -43,16 +44,16 @@ div#metricsContainer {
   color: red;
 }
 
-#statusArea {
+#statusArea {  
   font-weight: bold;
   width: 50%;
 }
 
-#question {
+#question {  
   width: 30%;
 }
 
-#questionAndInput {
+#questionAndInput, #downloadArea, #question, #statusArea {
   display: flex;
   align-items: center; /* Alinear verticalmente en el centro */
   justify-content: space-between;
