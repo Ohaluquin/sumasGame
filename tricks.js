@@ -50,7 +50,7 @@ function handleInput(input) {
       }
     else if (score%3 === 0) { // cada 3 respuestas correctas aumentar la dificultad
       roundNumber = false;
-      maxNumber += 5;
+      maxNumber += 4;
       minNumber += 3;
       if (score%6 === 0) { // cada 6 respuestas correctas se reduce el tiempo
         timerDuration--;
