@@ -3,7 +3,7 @@ const assets = [
   'index.html',
   'estilo.css',
   'triks.js',
-  'sumasGame.ico',
+  'favicon.ico',
   'pizarra.png',
   'tick.mp3',
   'error_sound.mp3',
