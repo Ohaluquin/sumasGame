@@ -2,14 +2,14 @@ const cacheName = 'sumasGame-cache-v1';
 const assets = [
   './',
   './index.html',
-  './estilo.css',
-  './triks.js',
+  './estilos.css',
+  './tricks.js',
   './favicon.ico',
   './pizarra.png',
   './tick.mp3',
   './error_sound.mp3',
   './dificil.png',
-  './expertor.png',
+  './experto.png',
   './facil.png',
   './intermedio.png',
   './principiante.png'
