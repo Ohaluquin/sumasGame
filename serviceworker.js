@@ -1,18 +1,18 @@
 const cacheName = 'sumasGame-cache-v1';
 const assets = [
   '/',
-  '/index.html',
-  '/estilo.css',
-  '/triks.js',
-  '/sumasGame.ico',
-  '/pizarra.png',
-  '/tick.mp3',
-  '/error_sound.mp3',
-  '/dificil.png',
-  '/expertor.png',
-  '/facil.png',
-  '/intermedio.png',
-  '/principiante.png'
+  'index.html',
+  'estilo.css',
+  'triks.js',
+  'sumasGame.ico',
+  'pizarra.png',
+  'tick.mp3',
+  'error_sound.mp3',
+  'dificil.png',
+  'expertor.png',
+  'facil.png',
+  'intermedio.png',
+  'principiante.png'
 ];
 
 // Instalar el Service Worker y precargar los recursos
